@@ -67,6 +67,7 @@ import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.item.armor.AdvancedBreathingApparatus;
+import supersymmetry.common.item.behavior.PipeNetReplacerBehaviour;
 import supersymmetry.common.item.behavior.PipeNetWalkerBehavior;
 import supersymmetry.loaders.SuSyFluidTooltipLoader;
 import supersymmetry.loaders.SuSyIRLoader;
@@ -123,7 +124,7 @@ public class ClientProxy extends CommonProxy {
         List<String> tooltips = event.getToolTip();
 
         if (stack.getItem() instanceof IGTTool tool &&
-                tool.getToolStats().getBehaviors().contains(PipeNetWalkerBehavior.INSTANCE)) {
+                (tool.getToolStats().getBehaviors().contains(PipeNetWalkerBehavior.INSTANCE) || tool.getToolStats().getBehaviors().contains(PipeNetReplacerBehaviour.INSTANCE))) {
             tooltips.add(I18n.format("item.susy.tool.tooltip.pipeliner",
                     GameSettings.getKeyDisplayString(KeyBind.TOOL_AOE_CHANGE.toMinecraft().getKeyCode())));
         }

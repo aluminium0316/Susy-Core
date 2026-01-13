@@ -158,7 +158,7 @@ public class PipeOperationWalker<T extends IPipeTile<?, ?>> {
 
         List<EnumFacing> facings = root.option.findNext(from != null ? from : direction, pipeTile);
 
-        if (walkedBlocks == 0) {
+        if (walkedBlocks == 0 && direction != null) {
             facings.add(direction); // Special case for the root node
         }
 
