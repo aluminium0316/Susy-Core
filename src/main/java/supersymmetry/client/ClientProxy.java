@@ -124,7 +124,8 @@ public class ClientProxy extends CommonProxy {
         List<String> tooltips = event.getToolTip();
 
         if (stack.getItem() instanceof IGTTool tool &&
-                (tool.getToolStats().getBehaviors().contains(PipeNetWalkerBehavior.INSTANCE) || tool.getToolStats().getBehaviors().contains(PipeNetReplacerBehaviour.INSTANCE))) {
+                (tool.getToolStats().getBehaviors().contains(PipeNetWalkerBehavior.INSTANCE) ||
+                        tool.getToolStats().getBehaviors().contains(PipeNetReplacerBehaviour.INSTANCE))) {
             tooltips.add(I18n.format("item.susy.tool.tooltip.pipeliner",
                     GameSettings.getKeyDisplayString(KeyBind.TOOL_AOE_CHANGE.toMinecraft().getKeyCode())));
         }
