@@ -235,9 +235,7 @@ public abstract class RotationGeneratorController extends FuelMultiblockControll
 
         @Override
         protected long getMaxParallelVoltage() {
-            long maximumOutput = getMaximumAllowedVoltage();
-            return Math.max(scaleProduction(maximumOutput),
-                    Math.min(proposedEUt, maximumOutput));
+            return getMaximumAllowedVoltage();
         }
 
         public long getMaximumAllowedVoltage() {
